@@ -1,0 +1,41 @@
+﻿@model IEnumerable<_311Net_Practical8.Models.Product>
+
+<h2>Inventory Management</h2>
+
+<p>
+    @Html.ActionLink("Add New Product", "Create")
+</p>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.ProductID</td>
+            <td>@p.ProductName</td>
+            <td>@p.Quantity</td>
+            <td>@p.Price</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit",
+                    new { id = p.ProductID })
+                |
+                @Html.ActionLink("Delete", "Delete",
+                    new { id = p.ProductID },
+                    new
+                         {
+                        onclick = "return confirm('Delete this product?');"
+                    })
+            </td>
+        </tr>
+    }
+    
+
+</table>

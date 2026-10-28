@@ -1,0 +1,28 @@
+﻿
+
+@model _311Net_Practical8.Models.Product
+
+<h2>Add New Product</h2>
+
+@using (Html.BeginForm())
+{<p>Product Name</p>
+    @Html.TextBoxFor(m => m.ProductName)
+
+
+    <p>Quantity</p>
+    @Html.TextBoxFor(m => m.Quantity)
+
+    <p>Price</p>
+    @Html.TextBoxFor(m => m.Price)
+
+    <br />
+    <br />
+
+    <input type="submit" value="Save Product" />
+
+
+}
+
+<p>
+    @Html.ActionLink("Back to Inventory", "Index")
+</p>
